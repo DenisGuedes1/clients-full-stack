@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.updateContactRoutes = void 0;
+const express_1 = require("express");
+const contactUpdate_1 = require("../../controllers/Contact/Contact update/contactUpdate");
+const checkEmail_middleware_1 = require("../../middleware/checkEmail/checkEmail.middleware");
+const checkToken_Middle_1 = require("../../middleware/checkToken/checkToken.Middle");
+const updateContactRoutes = (0, express_1.Router)();
+exports.updateContactRoutes = updateContactRoutes;
+updateContactRoutes.patch("/:id", checkToken_Middle_1.verifyTokenIsValid, checkEmail_middleware_1.checkEmailMiddle, contactUpdate_1.updateContactController);

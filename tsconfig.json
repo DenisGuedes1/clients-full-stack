@@ -11,6 +11,7 @@
     "skipLibCheck": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+    "outDir": "./dist",
     "strictPropertyInitialization": false
   },
   "include": ["src", "app.ts"],

@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.updatedRouter = void 0;
+const express_1 = require("express");
+const update_User_controller_1 = require("../controllers/update.User/update.User.controller");
+const checkEmail_middleware_1 = require("../middleware/checkEmail/checkEmail.middleware");
+const checkToken_Middle_1 = require("../middleware/checkToken/checkToken.Middle");
+const validatedData_Middle_1 = require("../middleware/validateData/validatedData.Middle");
+const schemaCreated_users_1 = require("../schema/schemaCreated.users");
+exports.updatedRouter = (0, express_1.Router)();
+exports.updatedRouter.patch('', checkToken_Middle_1.verifyTokenIsValid, (0, validatedData_Middle_1.validateDataMiddleware)(schemaCreated_users_1.partialUpdateUsers), checkEmail_middleware_1.checkEmailMiddle, update_User_controller_1.userUpdateController);

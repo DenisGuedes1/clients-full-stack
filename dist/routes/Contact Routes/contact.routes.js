@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.contactRouter = void 0;
+const express_1 = require("express");
+const createdContact_controller_1 = require("../../controllers/Contact/created Contact/createdContact.controller");
+const checkEmail_middleware_1 = require("../../middleware/checkEmail/checkEmail.middleware");
+const checkToken_Middle_1 = require("../../middleware/checkToken/checkToken.Middle");
+const validatedData_Middle_1 = require("../../middleware/validateData/validatedData.Middle");
+const schemaContact_Users_1 = require("../../schema/schemaContact.Users");
+const contactRouter = (0, express_1.Router)();
+exports.contactRouter = contactRouter;
+contactRouter.post('', checkToken_Middle_1.verifyTokenIsValid, checkEmail_middleware_1.checkEmailMiddle, (0, validatedData_Middle_1.validateDataMiddleware)(schemaContact_Users_1.createUserContactSchema), createdContact_controller_1.createdContactController);
