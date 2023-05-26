@@ -1,7 +1,7 @@
 import express, { Application } from "express";
 import "express-async-errors";
 import swaggerUi from "swagger-ui-express";
-import swaggerDocument from "../swagger.json";
+import swaggerDocument from "../src/swagger.json";
 import { handlreErrors } from "./errors/error";
 import { contactRouter } from "./routes/Contact Routes/contact.routes";
 

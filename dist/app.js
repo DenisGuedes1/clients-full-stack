@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 require("express-async-errors");
 const swagger_ui_express_1 = __importDefault(require("swagger-ui-express"));
-const swagger_json_1 = __importDefault(require("../swagger.json"));
+const swagger_json_1 = __importDefault(require("../src/swagger.json"));
 const error_1 = require("./errors/error");
 const contact_routes_1 = require("./routes/Contact Routes/contact.routes");
 const delete_routes_1 = require("./routes/Contact Routes/delete.routes");
