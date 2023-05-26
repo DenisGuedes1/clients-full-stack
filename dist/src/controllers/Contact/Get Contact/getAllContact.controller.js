@@ -9,12 +9,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteContactController = void 0;
-const deleteContact_service_1 = require("../../../service/contact user/Delete Contact/deleteContact.service");
-const deleteContactController = (req, resp) => __awaiter(void 0, void 0, void 0, function* () {
-    console.log(req.params.id, "id rota");
-    console.log(req.user.id, "id do usuario");
-    const updatedContact = yield (0, deleteContact_service_1.deleteContactUserService)(parseInt(req.params.id), req.user.id);
-    return resp.status(200).json(updatedContact);
+exports.getContactByUserController = void 0;
+const getAll_contact_service_1 = require("../../../service/contact user/Get All contact user/getAll.contact.service");
+const getContactByUserController = (req, resp) => __awaiter(void 0, void 0, void 0, function* () {
+    const returnGet = yield (0, getAll_contact_service_1.getContactByUser)(req.user.id);
+    return resp.status(200).json(returnGet);
 });
-exports.deleteContactController = deleteContactController;
+exports.getContactByUserController = getContactByUserController;
