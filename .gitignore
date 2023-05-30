@@ -1,6 +1,5 @@
 node_modules
 *lock*
 .env
-
 .env.example
 swagger.config.txt

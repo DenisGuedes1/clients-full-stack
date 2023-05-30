@@ -26,7 +26,7 @@ const deleteContactUserService = async (contactId: number, userId: number) => {
 
   await contactRepository.delete(contactId);
 
-  return { message: "Contact deleted successfully" };
+
 };
 
 export { deleteContactUserService };

@@ -19,7 +19,8 @@ phone: number
 date_register: Date;
 
 
-@ManyToOne(()=> Users)
+
+@ManyToOne(()=> Users, {onDelete: "CASCADE"})
 user:Users
 
 }
