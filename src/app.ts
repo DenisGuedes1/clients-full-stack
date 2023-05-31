@@ -1,3 +1,4 @@
+import cors from "cors";
 import express, { Application } from "express";
 import "express-async-errors";
 import swaggerUi from "swagger-ui-express";
@@ -28,4 +29,5 @@ app.use('/user/contact/edit', updateContactRoutes)
 app.use('/user/contact/delete',contactDeleteRouter)
 app.use('/user/contacts', getContactUserRoutes)
 app.use(handlreErrors)
+app.use(cors())
 export default app
